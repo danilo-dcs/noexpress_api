@@ -2,6 +2,7 @@ import { DEFAULT_HEADER } from "../utils/requests.js"
 
 const allRoutes = {
     "/heroes:post": async (request, response) => {
+        throw new Error("ERRO TESTE")
         console.log("POSTING HEROES!")
         response.end("Success!")
     },
