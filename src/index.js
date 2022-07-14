@@ -11,6 +11,7 @@ server.listen(process.env.PORT || 3000, () => {
     console.log(`\n[noexpress_api] Runing at localhost ${process.env.PORT || 3000}\n`)
 })
 
+// Gracefull shutdown
 /* 
 const exitHandler = terminate(server, {
     coredump: false,
