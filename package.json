@@ -1,0 +1,32 @@
+{
+  "name": "node_api_no_frwks",
+  "version": "1.0.0",
+  "description": "Welcome, this repo is designed for practicing to build an nodejs without api. This project was based on the Eric Wendel's guide, available on youtube.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --inspect src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danilo-dcs/noexpress_api.git"
+  },
+  "keywords": [],
+  "author": "danilo c. silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danilo-dcs/noexpress_api/issues"
+  },
+  "homepage": "https://github.com/danilo-dcs/noexpress_api#readme",
+  "devDependencies": {
+    "@types/node": "^18.0.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.19"
+  }
+}
