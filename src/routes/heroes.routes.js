@@ -1,6 +1,15 @@
+import { HeroesService } from "../services/heroes.service.js"
+import { getRequestBody } from "../utils/getRequestBody.js";
+
 const heroesRoutes = {
     "/heroes:post": async (request, response) => {
-        console.log("POSTING HEROES!")
+
+        const heroesService = new HeroesService()
+
+        const body =  await Promise.resolve(getRequestBody(request))
+
+        heroesService.createHeroes(body);
+
         response.end("Success!")
     },
 
