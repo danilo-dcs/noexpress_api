@@ -1,8 +1,5 @@
-import { DEFAULT_HEADER } from "../utils/requests.js"
-
-const allRoutes = {
+const heroesRoutes = {
     "/heroes:post": async (request, response) => {
-        throw new Error("ERRO TESTE")
         console.log("POSTING HEROES!")
         response.end("Success!")
     },
@@ -26,11 +23,6 @@ const allRoutes = {
         console.log("DELETING HEROES!")
         response.end("Success!")
     },
-
-    deafult: (request, response) => {
-        response.writeHead(404, DEFAULT_HEADER)
-        response.end("Not Found!")
-    },
 }
 
-export { allRoutes }
+export { heroesRoutes }

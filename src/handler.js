@@ -1,6 +1,6 @@
 
 import { parse } from "node:url"
-import { allRoutes } from "./routes/all.routes.js"
+import { allRoutes } from "./routes/index.js"
 import { DEFAULT_HEADER } from "./utils/requests.js"
 
 const handler = async (request, response) => {
