@@ -1,11 +1,11 @@
 
 import { parse } from "node:url"
-import { allRoutes } from "./routes/index.js"
+import { appRouter } from "./routes/index.js"
 import { DEFAULT_HEADER } from "./utils/requests.js"
 
 const handler = async (request, response) => {
 
-    const { body , url, method } = request
+    const { url, method } = request
 
     const { 
         pathname 
@@ -13,7 +13,7 @@ const handler = async (request, response) => {
 
     const key = `${pathname}:${method.toLowerCase()}`
 
-    const chosenRoute = allRoutes[key] || allRoutes.deafult
+    const chosenRoute = appRouter(key)
 
     return Promise.resolve(chosenRoute(request, response))
     .catch(errorHandler(response))

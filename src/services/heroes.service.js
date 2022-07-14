@@ -6,6 +6,7 @@ export class HeroesService{
     async createHeroes(heroes){
         console.log("Creating heroes...")
         console.log(heroes)
+        
         return heroes
     }
 }

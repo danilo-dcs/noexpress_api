@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test ./tests",
-    "start": "nodemon --inspect src/index.js"
+    "start:dev": "nodemon --inspect src/index.js"
   },
   "repository": {
     "type": "git",
@@ -23,10 +23,10 @@
   },
   "homepage": "https://github.com/danilo-dcs/noexpress_api#readme",
   "devDependencies": {
-    "@types/node": "^18.0.4"
+    "@types/node": "^18.0.4",
+    "nodemon": "^2.0.19"
   },
   "dependencies": {
-    "dotenv": "^16.0.1",
-    "nodemon": "^2.0.19"
+    "dotenv": "^16.0.1"
   }
 }
