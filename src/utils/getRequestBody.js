@@ -1,11 +1,11 @@
-export async function getRequestBody(request){
-    let data = ''
-    await request.on('data', chunk => {
-        data += chunk;
-      });
+export async function getRequestBody(req){
+    const buffers = [];
 
-    await request.on('end', () => {
-        data = JSON.parse(data)
-    });
-    return data
+  for await (const chunk of req) {
+    buffers.push(chunk);
+  }
+
+  const data = Buffer.concat(buffers).toString();
+
+  return JSON.parse(data)
 }
