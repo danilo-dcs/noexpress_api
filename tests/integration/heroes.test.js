@@ -1,6 +1,7 @@
 import test from "node:test";
 import { promisify } from "node:util";
 import assert from "node:assert";
+import { once } from "node:events";
 
 test("Heroes Integration Test", async (t) => {
 
@@ -15,7 +16,6 @@ test("Heroes Integration Test", async (t) => {
     await t.test("It should be able to create heroes", async (t) => {
 
         const data = {
-            id: 1,
             name: "Superman",
             age: 22,
             power: "strenght"
@@ -26,6 +26,8 @@ test("Heroes Integration Test", async (t) => {
             body: JSON.stringify(data)
         })
 
+        const result = await request.json()
+
         assert.deepStrictEqual(
             request.headers.get('content-type'),
             'application/json'
@@ -35,14 +37,15 @@ test("Heroes Integration Test", async (t) => {
             request.status, 201
         )
 
-        const result = await request.json()
-
         assert.deepStrictEqual(
-            result.message, 'success!'
+            result.name,
+            'Superman',
+            "Name must be equal to the specified name"
         )
 
         assert.ok(
-            result.id.legth > 30
+            result.id.length > 30,
+            "Id should be a valid uuid"
         )
 
     });
